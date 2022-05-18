@@ -21,3 +21,7 @@ for x in range(0, int(N)):
     speeds.append(input())
 
 biggest = max(speeds)
+
+for y in speeds:
+    z = int(biggest) - int(y)
+    print(z)
