@@ -34,21 +34,19 @@
 # Seu programa deve enviar para a saída (imprimir) o índice do topo de pico mais próximo, diferente
 # daquele em que o montanhista se encontra.
 
-N = int(input())
-
-montains = []
-montainsAux = []
-
-for x in range(0, N):
-    inputed = int(input())
-    montains.append(inputed)
-    montainsAux.append(inputed)
-
-
-P = int(input())
-
-montainsAux.sort()
-
-print(montains.index(montainsAux[P+1]))
-
-# questao incompleta
+N = int (input ()) 
+ 
+montains =[] 
+montainsAux =[] 
+ 
+for x in range (0, N):
+  inputed = int (input ()) 
+  montains.append (inputed) 
+  montainsAux.append (inputed) 
+  
+P = int (input ()) 
+current = montainsAux[P] 
+montainsAux.sort () 
+shortest = montainsAux[0] 
+     
+print (montains.index (shortest))
