@@ -1,12 +1,16 @@
-# QUESTÃO INCOMPLETA
-
 color = input()
 
 inputs = {
-    "P("+color+")": 0,
-    "M("+color+")": 0,
-    "G("+color+")": 0,
+    "P(A)": 0,
+    "M(A)": 0,
+    "G(A)": 0,
+    "P(V)": 0,
+    "M(V)": 0,
+    "G(V)": 0
 }
+
+for i in ["P(" + color + ")", "M(" + color + ")", "G(" + color + ")"]:
+    inputs[i] = int(input())
 
 stock = {
     "P(A)": 10,
@@ -17,18 +21,17 @@ stock = {
     "G(V)": 4
 }
 
-colors = ['A', 'V']
-
-for i in inputs:
-    inputs[i] = int(input())
-
 sizes = ["P", "M", "G"]
 
-
-for size in sizes:
-    if stock[size+'(' + color + ')'] >= inputs[size + '(' + color + ')']:
-        print(str(size+'(' + color + '):') +
-              str(stock[size+'(' + color + ')'] - inputs[size+'(' + color + ')']))
-    else:
-        print(size+'(' + color + '):' + str(stock[str(size)+'(' + color + ')']
-                                            ) + ' - "Quantidade não disponível"')
+for colors in ['A', 'V']:
+    for size in sizes:
+        if colors == color:
+            if stock[size+'(' + color + ')'] >= inputs[size + '(' + color + ')']:
+                print(str(size+'(' + colors + '):') +
+                      str(stock[size+'(' + colors + ')'] - inputs[size+'(' + color + ')']))
+            else:
+                print(size+'(' + colors + '):' +
+                      str(stock[str(size)+'(' + colors + ')']) + ' - "Quantidade não disponível".')
+        else:
+            print(size+'(' + colors + '):' +
+                  str(stock[str(size)+'(' + colors + ')']))
