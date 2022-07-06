@@ -1,3 +1,5 @@
+# camisas
+
 color = input()
 
 inputs = {
