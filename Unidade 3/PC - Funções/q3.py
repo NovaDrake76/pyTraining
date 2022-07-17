@@ -1,32 +1,37 @@
-# incompleta
-
+A = []
+B = []
 N = int(input())
 
-list1 = []
-list2 = []
 
-for x in range(0, N):
-    if N != 0:
-        list1.append(int(input()))
+for x in range(N):
+ N = int(input())
+ A.append(N)
 
 M = int(input())
+for y in range(M):
+ M = int(input())
+ B.append(M)
 
-for x in range(0, M):
-    if M != 0:
-        list2.append(int(input()))
+def sequence(p):
+  if p + len(A) > len(B):
+   return False
+  TA = len(A) - 1
+  for i in A:
+   x = A[A.index(i)]
+   y = B[A.index(i) + p]
+   if y != x:
+    return False
+    
+    
+  return True
+     
+  
 
+for b in range(len(B)):
+ sequence(b)
+ if sequence(b) == True:
+   print("S")
+   break
 
-def verify(p):
-    if (p + len(list1)) > len(list2):
-        print('N')
-    else:
-        for i in range(0, list1[-1]):
-            x = list1[i-1]
-            y = list2[(i+p)-1]
-            if x != y:
-                print('N')
-            print('S')
-
-
-for i in list1:
-    verify(i)
+if sequence(b) == False:
+  print('N')
